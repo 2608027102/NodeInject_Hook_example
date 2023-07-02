@@ -71,3 +71,11 @@ jobs:
       with:
         name: ${{ matrix.archive-name }}
         path: archive/${{ matrix.archive-name }}
+        
+    - name: Deploy
+      uses: s0/git-publish-subdir-action@develop
+      env:
+        REPO: git@github.com:2608027102/NodeInject_Hook_example.git
+        BRANCH: gh-pages
+        FOLDER: build
+        SSH_PRIVATE_KEY: ${{ secrets.DEPLOY_PRIVATE_KEY }}
