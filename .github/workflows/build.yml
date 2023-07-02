@@ -72,6 +72,32 @@ jobs:
         name: ${{ matrix.archive-name }}
         path: archive/${{ matrix.archive-name }}
         
+    - name: Push Dir
+      # You may pin to the exact commit or the version.
+      # uses: casperdcl/push-dir@e351785b3b8a4e27e0aa9cb9bbc9d32a74de036c
+      uses: casperdcl/push-dir@v1.0.2
+      with:
+        # Commit message
+        message: Push To Pages
+        # Branch to push to
+        branch: gh-pages
+        # Git committer name
+        name: github-actions[bot]
+        # optional, default is github-actions[bot]
+        # Git committer email
+        # email: # optional, default is 41898282+github-actions[bot]@users.noreply.github.com
+        # Directory to push
+        #dir: # optional, default is .
+        # Set to "true" to force push
+        #force: # optional
+        # Set to "false" to discard any prior commits on the `branch` (Note: "false" will override `force` to "true")
+
+        #history: # optional, default is true
+        # Text to inject into a `CNAME` file
+        #cname: # optional, default is 
+        # Set to "true" to add a `.nojekyll` file
+        #nojekyll: # optional
+        
     - name: action-push
       # You may pin to the exact commit or the version.
       # uses: ludeeus/action-push@0b7c1175655379c008f42bbaf524caa79cf89ec1
